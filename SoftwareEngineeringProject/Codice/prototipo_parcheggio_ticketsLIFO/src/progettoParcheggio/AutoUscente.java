@@ -9,7 +9,7 @@ package progettoParcheggio;
  * Copyright John Wiley & Sons - 2003.
  */
 
-import java.util.*;
+//import java.util.*;
 
 public class AutoUscente implements Runnable
 {

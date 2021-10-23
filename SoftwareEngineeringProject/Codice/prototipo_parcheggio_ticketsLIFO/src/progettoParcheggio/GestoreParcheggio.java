@@ -7,11 +7,11 @@ public class GestoreParcheggio implements Parcheggio
 {
    private static final int PARKING_SIZE = 10; // Capacità massima del buffer.
 
-   private int in; // points to the next free position in the buffer
-   private int out; // points to the next full position in the buffer
+   //private int in; // points to the next free position in the buffer
+   //private int out; // points to the next full position in the buffer
    private ArrayList<Ticket> parcheggio; // Array di oggetti contenente le risorse.
    //private int cu;
-   private int ce;
+   //private int ce;
 
    private Semaphore semaforo; // Mutua esclusione per sezione critica.
    private Semaphore entrante; // Conta le risorse di tipo locazioni piene.
@@ -21,8 +21,8 @@ public class GestoreParcheggio implements Parcheggio
    public GestoreParcheggio()
    {
       // buffer is initially empty
-      in = 0;
-      out = 0;
+      //in = 0;
+      //out = 0;
       parcheggio = new ArrayList<Ticket>();
       semaforo = new Semaphore(1); // Nessun thread è attivo sul buffer.
       entrante = new Semaphore(0); // Essendo il buffer inizialmente vuoto
@@ -31,7 +31,7 @@ public class GestoreParcheggio implements Parcheggio
       // vuoto avrò BUFFER_SIZE locazione vuote cioè pari alla capacità
       // massima.
       //cu = 100;
-      ce = 0;
+      //ce = 0;
    }
 
    // Metodo insert eseguito dal thread produttore.
@@ -60,7 +60,7 @@ public class GestoreParcheggio implements Parcheggio
 	
 	  //parcheggio[in] = item;
      //in = (in + 1) % PARKING_SIZE;
-      ce++;
+     // ce++;
       //cu--;
 
       System.out.println("Una macchina è entrata " + (parcheggio.size())+"\nticket: " + LocalDateTime.now() + " Posti occupati nel parcheggio = " + (parcheggio.size())+"\nticket: " + parcheggio.get(parcheggio.size()-1).getBarcode());
@@ -110,7 +110,7 @@ public class GestoreParcheggio implements Parcheggio
    }
    
    
-   //inutili senza buffer
+   /*inutili senza buffer
    public static <T> int getLength(T[] arr){
 	    int count = 0;
 	    for(T el : arr)
@@ -126,5 +126,6 @@ public class GestoreParcheggio implements Parcheggio
 	            count++;
 	    return count;
    }
+   */
 }
 

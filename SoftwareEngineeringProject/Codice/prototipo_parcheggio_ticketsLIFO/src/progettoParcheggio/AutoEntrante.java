@@ -10,7 +10,7 @@ package progettoParcheggio;
  */
 
 
-import java.util.*;
+//import java.util.*;
 
 public class AutoEntrante implements Runnable
 {
