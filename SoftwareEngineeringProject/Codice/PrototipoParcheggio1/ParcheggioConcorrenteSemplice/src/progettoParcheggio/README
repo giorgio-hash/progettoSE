@@ -1,0 +1,9 @@
+Files for semaphore-based solution to bounded buffer. 
+
+Usage:
+
+1) Compile all source files
+
+2) Enter
+
+	java Factory
