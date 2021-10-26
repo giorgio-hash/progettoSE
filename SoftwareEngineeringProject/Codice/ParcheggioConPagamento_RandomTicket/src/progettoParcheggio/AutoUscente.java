@@ -18,7 +18,7 @@ public class AutoUscente implements Runnable
    		
    			
    			if( ParcheggioSimulato.parcheggio.size() > 0 ){
-	   			ticket = ParcheggioSimulato.parcheggio.get( (int)(Math.random()*ParcheggioSimulato.parcheggio.size()) - 1 );
+	   			ticket = ParcheggioSimulato.parcheggio.get( (int)(Math.random()*ParcheggioSimulato.parcheggio.size()) );
 	   			
 	   			if(buffer.check4Remove(ticket)) 
 	   					System.out.println(buffer.remove(ticket)? "Pagamento avvenuto con successo" : "errore nel pagamento");
