@@ -54,7 +54,7 @@ public class GestoreParcheggio implements Parcheggio
 	}
 	  
 	  // SEZIONE CRITICA: aggiunta di un oggetto nel buffer.
-	System.out.print("\n\nTicket ritirato. Innalzamento sbarra in corso.. \n");
+	System.out.print("Ticket ritirato. Innalzamento sbarra in corso.. \n");
 	
 	parcheggio.add(new Ticket());
 	
@@ -63,8 +63,9 @@ public class GestoreParcheggio implements Parcheggio
      // ce++;
       //cu--;
 
-      System.out.println("Una macchina è entrata " + (parcheggio.size())+"\nticket: " + LocalDateTime.now() + " Posti occupati nel parcheggio = " + (parcheggio.size())+"\nticket: " + parcheggio.get(parcheggio.size()-1).getBarcode());
-	
+      System.out.println("Una macchina è entrata " + "\nOre: " + LocalDateTime.now() + "\nPosti occupati nel parcheggio = " + (parcheggio.size())+"\nticket: " + parcheggio.get(parcheggio.size()-1).getBarcode());
+      System.out.println("\n\n");
+      
       semaforo.release(); // Rilascio mutex per fine sezione critica.
       entrante.release(); // Sveglia il consumatore e lo avvisa che è presente
       // una locazione piena che può essere consumata. 
@@ -89,7 +90,7 @@ public class GestoreParcheggio implements Parcheggio
   	}
       
        // SEZIONE CRITICA: rimozione di un oggetto dal buffer.
-    System.out.print("\n\nTicket consegnato, pagamento avvenuto. Innalzamento sbarra in corso.. \n");
+    System.out.print("Ticket consegnato, pagamento avvenuto. Innalzamento sbarra in corso.. \n");
     
     Ticket out = parcheggio.remove(parcheggio.size()-1);
     //item = parcheggio[out];
@@ -99,8 +100,8 @@ public class GestoreParcheggio implements Parcheggio
       //cu++;
       //ce--;
 	  
-      System.out.println("Una macchina è uscita " + LocalDateTime.now() + " Posti liberi nel parcheggio = " + (parcheggio.size()) + "\nTicket eliminato: " + out.getBarcode() + " --entrato alle " + out.getReceiveTime());
-    
+      System.out.println("Una macchina è uscita " + "\nOre: " + LocalDateTime.now() + "\nPosti occupati nel parcheggio = " + parcheggio.size() + "\nTicket eliminato: " + out.getBarcode() + " --entrato alle " + out.getReceiveTime());
+      System.out.println("\n\n");
       semaforo.release(); // Rilascio mutex per fine sezione critica.
       uscente.release(); // Sveglia il produttore e lo avvisa che è presente
       // una locazione vuota che può essere riempita. 
