@@ -74,7 +74,9 @@ public class AutoUscente implements Runnable
 		    	
 		    	
 		    	str = in.readLine(); //attendo dati dal terminale
-		    	System.out.println("AutoUscente: " +str);
+		    	
+		    	//System.out.println("AutoUscente: " +str);  simpatico, per evidenziare l'interleaving tra auto che entrano e che escono
+		    	
 		    	data = str.split("/")[2].split("T")[0].split("-");
 		    	ora = str.split("/")[2].split("T")[1].split(":");
 		    	ticket = new Ticket(str.split("/")[1] , LocalDateTime.of(Integer.parseInt(data[0]),Integer.parseInt(data[1]),Integer.parseInt(data[2]),Integer.parseInt(ora[0]),Integer.parseInt(ora[1]),Integer.parseInt("0"),Integer.parseInt("7")));

@@ -16,7 +16,8 @@ public class GestorePagamento {
 	
 	public boolean pagamento(float conto) {
 		
-		int esito = (int) (Math.random()*2);
+		//int esito = (int) (Math.random()*2);
+		int esito = 1;
 		
 		if( esito == 1 )
 			return true;

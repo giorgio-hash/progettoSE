@@ -11,7 +11,7 @@ public class SleepEntrante
 	public static void nap(int duration) {
        	int sleeptime = (int) (NAP_TIME * Math.random() );
        	try { 
-       		Thread.sleep(sleeptime*3000);
+       		Thread.sleep(sleeptime*2000);
        	}
        	catch (InterruptedException e) {
        		
