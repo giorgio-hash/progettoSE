@@ -59,7 +59,15 @@ public class GestoreParcheggio implements Parcheggio
 	Ticket ticket = new Ticket();
 	
 	parcheggio.add(ticket); // Aggiunga ticket
-	ParcheggioSimulato.parcheggio.add(ticket);//Aggiunta ticket al parcheggio di simulazione
+	 
+    try {
+		ParcheggioSimulato.semaforo.acquire();
+		ParcheggioSimulato.parcheggio.add(ticket);//Aggiunta ticket al parcheggio di simulazione
+	    ParcheggioSimulato.semaforo.release();
+    } catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} 
 	
 	
 	System.out.println("Una macchina è entrata " + "\nticket: " + LocalDateTime.now() + "\nPosti occupati nel parcheggio = " + (parcheggio.size())+"\nticket: " + parcheggio.get(parcheggio.size()-1).getBarcode());	
@@ -84,7 +92,16 @@ public class GestoreParcheggio implements Parcheggio
     sbarraUscente.up(); // Innalzamento sbarra.
     
     parcheggio.remove(find(ticket)); // Rimozione ticket
-    ParcheggioSimulato.parcheggio.remove(ticket);//componente della simulazione
+    
+    try {
+		ParcheggioSimulato.semaforo.acquire();
+	    ParcheggioSimulato.parcheggio.remove(ParcheggioSimulato.find(ticket));//componente della simulazione
+	    System.out.println("ticket rimosso da parcheggio virtuale. size : " + ParcheggioSimulato.parcheggio.size() );
+	    ParcheggioSimulato.semaforo.release();
+    } catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} 
     
     System.out.println("Una macchina è uscita alle: " + LocalDateTime.now() + "\nPosti occupati nel parcheggio = " + (parcheggio.size()) + "\nTicket eliminato: " + ticket.getBarcode() + " --- entrato alle " + ticket.getReceiveTime());
     sbarraUscente.down(); // Abbassamento sbarra.
@@ -96,6 +113,10 @@ public class GestoreParcheggio implements Parcheggio
     return 0;
    }
    
+   /**
+    * prima fase della rimozione del ticket: controlla se questo sia effettivamente ancora nel sistema
+    * (tramite corrispondenza del barcode). Altrimenti, comunica che non c'è, restituendo False
+    * **/
    public boolean check4Remove(Ticket ticket) {
 	   
 	   System.out.print("\nTicket consegnato:" + ticket + "\n");
@@ -121,7 +142,9 @@ public class GestoreParcheggio implements Parcheggio
 	  	}   
    }
    
-   
+   /**per qualche motivo i ticket deserializzati "cambiano identità" agli occhi del sistema...
+   perciò esiste questa funzione
+   **/
    private Ticket find(Ticket ticket){
 	   
 	   for(int i=0;i<parcheggio.size();i++) {

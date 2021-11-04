@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetAddress;
@@ -48,43 +50,55 @@ public class TerminaleUscente {
 		        BufferedWriter bw = new BufferedWriter(osw);
 		        out = new PrintWriter(bw, true);
 	
+		        ObjectOutputStream obj_out = new ObjectOutputStream( socket.getOutputStream() );
+			    ObjectInputStream obj_in = new ObjectInputStream( socket.getInputStream() );
+		        
 		        // creazione stream di input da tastiera per la lettura da tastiera
 		        //stdIn = new BufferedReader(new InputStreamReader(System.in));
 		        //String userInput;
 		        int esito;
+		        
 		        String str ;
-			    String[] data;
-			    String[] ora; 
-			    LocalDateTime time;
+			    //String[] data;
+			    //String[] ora; 
+			    //LocalDateTime time;
 		      //***************************FINE ZONA VARIABILI**********************************
 		        
 	
-		        // ciclo di lettura da tastiera, invio al server e stampa a video della risposta
-		        // E QUI INIZIA IL VERO PROGRAMMA
+		        // QUI INIZIA IL VERO PROGRAMMA
+		        
+		        
+		        Thread.sleep(10000); //TEMPO DI SETUP (per garantire la sincronia)
+		        
+		        
 		        while (true){
-		            /*userInput = stdIn.readLine();
-		            out.println(userInput);
-		            if (userInput.equals("END")) break;
-		            System.out.println("Echo: " + in.readLine());
-		        	*/
-		        	
-		        	SleepEntrante.nap();
-		        	
+		           
 		        	
 		        	//SIMULAZIONE
-		        	str = in.readLine(); //attendo dati dal thread AutoUscente
-			    	System.out.println("terminale: " + str);
+		        	//str = in.readLine(); //vecchio test
+		        	
+		        	
+		        	ticket = (Ticket)obj_in.readObject();//attendo dati dal thread AutoUscente
+		        	
+		        	
+		        	
+		        	/* vecchio test
+		        	System.out.println("terminale: " + str);
 		        	data = str.split("/")[2].split("T")[0].split("-");
 			    	ora = str.split("/")[2].split("T")[1].split(":");
 			    	str = str.split("/")[1];
 			    	time = LocalDateTime.of(Integer.parseInt(data[0]),Integer.parseInt(data[1]),Integer.parseInt(data[2]), Integer.parseInt(ora[0]), Integer.parseInt(ora[1]));
 			    	ticket = new Ticket( str, time );
+			    	*/
+			    	
 			    	// SIMULAZIONE
 			    	
 			    	
 			    	//CLIENTE Dà BIGLIETTO AL TERMINALE. ATTENDE PROCESSO
-			   		out.println(ticket);
-			   				
+			   		//out.println(ticket); //vecchio test
+			   		obj_out.writeObject(ticket);
+		        	obj_out.flush();
+			   		
 			   		str = in.readLine();
 			   		System.out.println("esito: " + str);
 			   		esito = Integer.parseInt(str);
@@ -103,7 +117,13 @@ public class TerminaleUscente {
 		    } catch (IOException e) {
 		        System.err.println("Couldn't get I/O for the connection to: " + addr);
 		        System.exit(1);
-		    }
+		    } catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		    finally{
 			    System.out.println("EchoClient: closing...");
 			    out.close();

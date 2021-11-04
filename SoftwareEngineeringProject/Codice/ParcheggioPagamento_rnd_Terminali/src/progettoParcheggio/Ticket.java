@@ -1,9 +1,10 @@
 package progettoParcheggio;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Random;
 
-public class Ticket {
+public class Ticket implements Serializable{
 
 	private long barcode;
 	private LocalDateTime receiveTime;
@@ -20,12 +21,14 @@ public class Ticket {
 		
 	}
 	
+	/* vecchio test sulla comunicazione
 	public Ticket( String barcode, LocalDateTime receiveTime ) {
 		
 		this.barcode = Long.parseLong(barcode);
 		this.receiveTime = receiveTime;
 		
 	}
+	*/
 	
 	public long getBarcode() {
 		return barcode;

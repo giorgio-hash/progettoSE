@@ -2,6 +2,12 @@ package progettoParcheggio;
 
 import java.time.LocalDateTime;
 
+/**
+ * 
+ * @author Giorgio Chirico, raffaele di maio
+ *
+ * Questa classe si occupa della gestione delle transazioni monetarie (calcolo costo, esito pagamento)
+ */
 public class GestorePagamento {
 	
 	
@@ -14,6 +20,13 @@ public class GestorePagamento {
 		
 	}
 	
+	/**
+	 * 
+	 * @param conto
+	 * @return
+	 * 
+	 * processa il pagamento e restituisce un esito
+	 */
 	public boolean pagamento(float conto) {
 		
 		//int esito = (int) (Math.random()*2);
@@ -28,6 +41,15 @@ public class GestorePagamento {
 	
 	
 	// Metodo per il calcolo del prezzo del ticket
+	
+	/**
+	 * 
+	 * @param ticketTime = ora di erogazione del ticket ( oggetto LocalDateTime )
+	 * @return float
+	 * 
+	 * 
+	 * Questa funzione calcola il prezzo del ticket in base all'ora in cui è stato erogato
+	 */
 	public float prezzoTicket(String ticketTime) {
 			
 			// Stringhe per conversione tempo del ticket erogato

@@ -9,9 +9,9 @@ public class SleepUtilities
 	}
 
 	public static void nap(int duration) {
-		int sleeptime = (int) (NAP_TIME * Math.random() );
+		int sleeptime = (int) (NAP_TIME * Math.random()*1000 );
         try { 
-        	Thread.sleep(sleeptime*1000);
+        	Thread.sleep(sleeptime);
         }
         catch (InterruptedException e) {
         	
