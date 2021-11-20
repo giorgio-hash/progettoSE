@@ -1,10 +1,7 @@
 
 settare porta TCP: 3300
 
-settare ID utente: root
 settare password:admin
-
+settare ID utente: root
 
 Nel setup ti verrà richiesto prima di settare la password e poi il nome utente.
-Non è necessario installare tutti i componenti che ti vengono messi a disposizione!
-Selezionare solo quelli indispensabili ( nulla che coinvolga il router eccetera )
