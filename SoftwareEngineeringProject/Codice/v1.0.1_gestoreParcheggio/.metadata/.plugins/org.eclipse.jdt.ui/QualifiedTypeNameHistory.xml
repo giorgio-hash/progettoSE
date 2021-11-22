@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="gestori.GestoreParcheggio"/>
+<fullyQualifiedTypeName name="utilities.BackupDB"/>
+<fullyQualifiedTypeName name="utilities.Ticket"/>
+<fullyQualifiedTypeName name="utilities.Parcheggio"/>
+<fullyQualifiedTypeName name="concorrenziali.AutoEntrante"/>
+<fullyQualifiedTypeName name="concorrenziali.AutoUscente"/>
+<fullyQualifiedTypeName name="model.SocketEntrante"/>
+<fullyQualifiedTypeName name="controller.ControllerEntrante"/>
+<fullyQualifiedTypeName name="view.ViewEntrante"/>
+<fullyQualifiedTypeName name="model.Ticket"/>
+<fullyQualifiedTypeName name="model.SocketUscente"/>
+<fullyQualifiedTypeName name="controller.ControllerUscente"/>
+<fullyQualifiedTypeName name="view.ViewUscente"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+</qualifiedTypeNameHistroy>
