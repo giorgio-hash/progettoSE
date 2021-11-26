@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="gchir"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-10-26 02:48:06 "/>
+        <attribute name="created" value="Z2NoaXI7TEFQVE9QLU1SQzlTNlVHOzIwMjEtMTAtMjY7IjExOjUxOjIzICI7Mjc5Mg=="/>
+        <attribute name="edited" value="Z2NoaXI7TEFQVE9QLU1SQzlTNlVHOzIwMjEtMTAtMjY7IjAyOjQ4OjA2ICI7NDsyOTEw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="1.entra macchina&#13;&#10;&#13;&#10;2.eroga ticket&#13;&#10;&#13;&#10;3.aggiungi ad ArrayList Parcheggio&lt;Ticket&gt;&#13;&#10;&#13;&#10;4. aggiungi ad ArrayList public static parcheggioSimulato&lt;Ticket&gt;"/>
+            <comment text="parcheggioSimulato&lt;Ticket&gt; si trova nella classe SimulatoreParcheggio: fa s&#236; che AutoUscente prenda un ticeket a caso per la simulazione e &quot;testi&quot; il gestore "/>
+            <if expression="una auto vuole uscire?">
+                <then>
+                    <call expression="AutoUscente sceglie un ticket da SimulatoreParcheggio"/>
+                    <comment text="Nella simulazione, l'autista ha appena inserito il ticket nel terminale"/>
+                    <call expression="AutoUscente chiama: boolean check4Remove(Ticket ticket)"/>
+                    <comment text="&#13;&#10;E' per verificare se il ticket &#232; ancora in Parcheggio"/>
+                    <comment text="LOCK ABILITATO"/>
+                    <if expression="ticket &#232; ancora in parcheggio?">
+                        <then>
+                            <call expression="check4Remove returns true"/>
+                            <call expression="AutoUscente chiama boolean remove( Ticket ticket, PayMethod payment )"/>
+                            <call expression="GestoreParcheggio gestisce pagamento"/>
+                            <if expression="pagamento va a buon fine?">
+                                <then>
+                                    <call expression="elimina tupla da Parcheggio e da SimulazioneParcheggio (e da DB)"/>
+                                    <comment text="LOCK DISABILITATO"/>
+                                    <call expression="remove returs true"/>
+                                    <call expression="AutoUscente chiama: System.out.println(&quot;pagamento completato&quot;)"/>
+                                </then>
+                                <else>
+                                    <comment text="LOCK DISABILITATO"/>
+                                    <call expression="remove returns false"/>
+                                    <call expression="AutoUscente chiama: System.out.println(&quot; problemi nel pagamento &quot;)"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else/>
+                    </if>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

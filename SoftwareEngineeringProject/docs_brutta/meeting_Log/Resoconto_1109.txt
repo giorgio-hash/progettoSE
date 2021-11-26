@@ -1,0 +1,13 @@
+
+martedì 9 novembre
+
+2 ore
+
+LAVORO CONSEGUITO
+
+-sviluppo codice:
+	- prototipazione, testing e implementazione BackupDB realizzato con database con mySQL	
+	- sviluppo UML, prototipazione e testing del terminale d'entrata (con struttura a strati)
+			-pattern model-controller-view
+	-sviluppo UML del terminale d'uscita
+	-testing sistema DB + socket entrata + socket uscita

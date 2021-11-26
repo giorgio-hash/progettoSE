@@ -1,0 +1,13 @@
+
+2 ore ( 10.00 - 12.00 )
+
+LAVORO CONSEGUITO:
+
+-Sviluppo,testing,pianificazione software: parte concorrenziale
+		-sviluppo + testing concorrenzialità dei thread
+		-pianificazione sviluppo ulteriore del Buffer di parcheggio
+		-pianificazione di sviluppo ulteriore del software ( vedi aggiornamento2110.txt )
+		
+-aspetti manageriali:
+	-completato il setup di GitHub
+

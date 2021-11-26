@@ -1,0 +1,28 @@
+
+
+2 ore (10.00 - 12.00)
+
+
+LAVORO CONSEGUITO
+
+-sviluppo applicazione:
+	-mesh dei prototipi realizzati il 23.10.2021
+	-realizzata simulazione pagamento
+	-realizzata simulazione ticket randomico: flow-diagram, codifica, compilazione
+	-progetto terminali per uscita e entrata: modello client-server di tipo echo binding per terminale-thread
+		>per ora è stato creato solo il flow-diagram e testato un esempio nativo di codice
+
+
+LAVORO PROSSIMO
+-mettere a posto SleepUtilities e SleepEntrante
+-implementazione comunicazione terminale-thread	
+-implementazione mergesort per ricerca velocizzata su ArrayList<Ticket> parcheggio
+-implementazione database ( foglio .txt o DBMS PostgreSQL con JDBC per DBconnectivity? )
+-feature barrierless
+-sviluppo pagamento( metodi di pagamento )?
+
+DUBBI
+-gestione lock? 
+-Velocità di comunicazione coi terminali? (specie se utilizziamo il DBMS che già di per sè gestisce i lock automaticamente => utilizzare DBMS può farci risparmiare righe di codice? )
+-testing contestualizzati?
+

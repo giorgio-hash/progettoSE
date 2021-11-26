@@ -1,0 +1,11 @@
+
+giovedì 11 novembre
+
+LAVORO CONSEGUITO
+
+-sviluppo codice:
+	-implementazione struttura a strati per terminale d'uscita e testing (A RETE SCARICA)
+			-aggiornamento GestoreParcheggio
+			-aggiornamento GestorePagamento
+	-progettazione GUI interfaccia d'entrata, ricerca materiali
+	-rifiniture del codice

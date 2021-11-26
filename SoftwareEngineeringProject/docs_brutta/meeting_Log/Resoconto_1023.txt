@@ -1,0 +1,36 @@
+
+
+2 ore ( 10.30 - 12.45 )
+
+
+LAVORO CONSEGUITO
+
+-sviluppo codice:
+	-creata classe Sbarra, classe Ticket
+	-modificato buffer statico in ArrayList
+	-concorrenzialità con ticket: LIFO
+	-rifinitura del codice
+	-commento codice
+	-pianficazione modifiche: SleepUtilities e SleepEntrante
+	-pianificazione testing contestualizzati: fiera, centro-città, parcheggi barrierless ...
+
+-aspetti manageriali:
+	-migliorata repository su GitHub: sistemazione cartelle( distinzione tra cartella documentazione e codice )
+	-suddivisione delle delivery in prototipi
+
+
+PROSSIMO MEETING
+testing su ticket randomico? (per ora è LIFO)
+la feature "barrierless"? ( no threads? e relativa lista targhe)
+"database"?
+"pagamento"? (inizio strutturazione classe, giusto per aggiungere nella transazione il metodo "paga()". simulazione pagamento fittizio)
+
+
+
+DA FARE:
+1) mesh dei prototipi di oggi
+2) raffa fa il pagamento
+3) giorgio fa il test randomico sui ticket	
+	
+
+

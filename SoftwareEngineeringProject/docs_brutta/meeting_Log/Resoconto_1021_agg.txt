@@ -1,0 +1,28 @@
+Rimettere a posto il buffer( posti diventano null quando macchine escono )
+
+Per ora abbiamo implementato una POLITICA LIFO per la simulazione della gestione parcheggi !
+
+
+SIMULAZIONE RANDOMICA
+Le macchine vogliamo che entrino ed escano randomicamente, non sequenzialmente!
+
+Soluzione:
+
+1) SOLO PARCHEGGIO: algoritmo randomico che prende un posto, controlla se è occupato, 
+		    la sveglia e la fa uscire.
+		    Problema: scegliere tante volte posti null potrebbe portare a consistenti
+		              overhead di sistema?
+
+2) VETTORI "POSTI OCCUPATI" E "POSTI LIBERI" : strutture dati statiche per avere riferimenti veloci.
+		    In uscita/entrata, scegli un elemento a caso non-null e libera/occupa posto 
+		    in "Parcheggio" .
+		    Problema: scegliere tante volte posti null potrebbe portare a consistenti
+		              overhead di sistema?
+		    
+3) LISTE "POSTI OCCUPATI" E "POSTI LIBERI" : strutture dati dinamiche per avere riferimenti veloci,
+		    In uscita/entrata, scegli un elemento a caso e libera/occupa posto 
+		    in "Parcheggio".
+		    Problema: meno overhead di sistema?
+
+
+						

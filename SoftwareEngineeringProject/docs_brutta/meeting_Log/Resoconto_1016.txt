@@ -1,0 +1,24 @@
+
+2 ore ( 10.00-12.00 )
+
+
+LAVORO CONSEGUITO:
+
+-Fase di analisi dei requisiti: Requirements Engineering
+		-brainstorming 
+		-definizione dei requisiti primari e secondari dell'applicazione( possibili sviluppi )
+		-divisione del lavoro nel tempo: imposte delivery
+		-modello di processo: eXtreme Programming?
+		-linguaggio scelto: Java
+		-IDE scelto: Eclipse
+		-definizione delle feature con FeatureIDE (possibili sviluppi?)
+		-ipotesi pattern di sviluppo( ci si avvia alla fase di design )
+
+
+ARGOMENTI( ipotetici ) DEL PROSSIMO MEETING
+requisiti secondari?
+linee guida?
+GitHub?
+Design dell'applicazione: pattern di sviluppo?
+
+

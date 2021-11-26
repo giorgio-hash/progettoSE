@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="gchir"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-10-26 12:36:51 "/>
+        <attribute name="created" value="Z2NoaXI7TEFQVE9QLU1SQzlTNlVHOzIwMjEtMTAtMjY7IjExOjA4OjE4ICI7Mjc5OA=="/>
+        <attribute name="edited" value="Z2NoaXI7TEFQVE9QLU1SQzlTNlVHOzIwMjEtMTAtMjY7IjEyOjM2OjUxICI7MzsyOTA3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="TerminaleUscente chiama:&#13;&#10;out.println(ticketData)&#13;&#10;&#13;&#10;dove out &#232; un PrintWriter verso il socket del thread Autouscente"/>
+            <comment text="utente ha inserito biglietto nel terminale"/>
+            <call expression="AutoUscente chiama: &#13;&#10;boolean check4remove(Ticket ticket)"/>
+            <comment text="1.Utente ha consegnato ticket e inviato dati biglietto al&#13;&#10;Thread di AutoUscente. &#13;&#10;2.Autouscente invia i dati del ticket a GestoreParcheggi che verifica la sua presenza nella ArrayList Parcheggio"/>
+            <comment text="LOCK ABILITATO"/>
+            <if expression="ticket &#232; ancora in Parcheggio?">
+                <then>
+                    <call expression="return true"/>
+                    <comment text="&#232; stato trovato il ticket e abilitato il pagamento "/>
+                    <call expression="AutoUscente chiama: &#13;&#10;out.println(&quot;consenti pagamento&quot;)&#13;&#10;&#13;&#10;dove out &#232; un PrintWriter verso il socket del thread TerminaleUscente"/>
+                    <call expression="TerminaleUscente chiama:&#13;&#10;out.println(dati_pagamento)&#13;&#10;verso AutoUscente"/>
+                    <call expression="AutoUscente chiama:&#13;&#10;boolean remove( Ticket ticket, PayMethod value )"/>
+                    <call expression="GestoreParcheggio cancella tupla da Parcheggio (e di conseguenza da DB)"/>
+                    <if expression="esito operazione?">
+                        <then>
+                            <comment text="LOCK_RELEASE"/>
+                            <call expression="ritorna true e fai sapere a AutoUscente che &#232; andata a buon fine"/>
+                            <call expression="AutoUscente fa sapere a TerminaleUScente che l'operazione &#232; andata a buon fine"/>
+                        </then>
+                        <else>
+                            <comment text="LOCK_RELEASE"/>
+                            <call expression="ritorna false e fai sapere a AutoUscente che c'&#232; stato un problema nel pagamento"/>
+                            <comment text="usare le eccezioni anzich&#232; il return?"/>
+                            <call expression="AutoUscente fa sapere a TerminalUscente che c'&#232; stato un problema nel pagamento"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <comment text="LOCK DISABILITATO"/>
+                    <call expression="return false"/>
+                    <comment text="pagamento non abilitato"/>
+                    <call expression="AutoUscente chiama:&#13;&#10;out.println(&quot;ticket non accettato&quot;)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

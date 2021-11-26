@@ -1,0 +1,24 @@
+
+
+		ticket inserito : setTicket() => setTicket() => Socket invia
+
+		check4Remove su Autouscente
+
+		ticket riconosciuto: abilitazione al pagamento 
+					1. invia bit di conferma AutoUscente -> SOcketUscente
+					2. ControllerUscente aspettava response(  ) che restituisce bit di conferma
+					3. ViewUscente aspettava a sua volta activePayment( ) per il bit di conferma
+								  
+
+		dati inseriti , impacchettati, spediti 
+					1. ViewUscente invoca sendPayment( ) di COntrollerUscente
+					2. ControllerUscente invoca a sua volta sendPayment( ) di SOcketUscente
+					
+
+		pagamento effettuato:
+				1. ControllerUscente invoca response( ) di SocketUscente
+				2. tramite il sendPayment(  ), ControllerUscente restituisce l'esito del pagamento a ViewUscente
+								
+
+N.B.: va modificata la gestione del pagamento sul server
+N.B: Su AutoUscente andranno implementate funzioni per gestire il pagamento => modifica di GestoreParcheggio per creare una funzione per il pagamento

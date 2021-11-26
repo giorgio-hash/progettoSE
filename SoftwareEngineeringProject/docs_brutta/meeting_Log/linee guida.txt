@@ -1,0 +1,58 @@
+
+APPROCCIO PROGRAMMA: BoundedBuffer tramite mutex
+
+2 classi Thread per casello( entrante e uscente )
+		-entrante: premi pulsante => eroga ticket => aggiorna DB => alza sbarra
+		-uscente: legge ticket => richiede pagamento => aggiorna DB => alza sbarra
+
+1 interfaccia Parcheggio
+
+1 classe gestoreParcheggio( con BoundedBuffer, IF Parcheggio e mutex )
+
+1 Launcher( launcher )
+
+1 classe sbarra
+
+1 classe pagamento( sviluppi futuri... )
+
+(database?)
+
+
+TESTING
+Simuliamo macchinine come in SO( tramite contatori e sleep() per napping randomici )
+-intervalli di parcheggio lunghi
+			macchine anonime( solo concorrenza )!
+-intervalli di parcheggio brevi( concorrenza ai caselli , starvation )
+			macchine anonime( solo concorrenza )!
+-intervalli di parcheggio lunghi
+			macchine con ticket
+-intervalli di parcheggio brevi( concorrenza ai caselli , starvation )
+			macchine con ticket
+-pagamenti, boundedbuffer con oggetto "tupla" contenente: barcode_ticket + TimeStamp
+
+
+PAGAMENTO
+leggi ticket => leggi barcode => trova primary key su DB => richiede pagamento
+
+pagamento completato => alza sbarra. elimina tupla, "buona giornata"
+
+
+
+SBARRA
+si alza e si abbassa
+
+
+
+PROBLEMA fault-tolerance 
+controllo a pressione/laser per evitare "scherzi" di "falsi ticket"
+(un malintenzionato prende un biglietto e occupa un posto, ma non ha parcheggiato la macchina! )
+
+o si risolve, o si sviluppa in futuro
+
+
+
+
+
+
+
+

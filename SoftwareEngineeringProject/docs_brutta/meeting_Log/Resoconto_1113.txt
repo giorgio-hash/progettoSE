@@ -1,0 +1,22 @@
+
+
+2 ore
+
+
+LAVORO CONSEGUITO
+
+-sviluppo codice: 
+	-testing dei tools per la GUI, risolta la ricerca materiali, avvio alla progettazoine GUI
+	-progettazione dell'implementazione GUI-terminali
+
+-aspetti organizzativi
+	-classificazione prototipi in versioni
+
+
+LAVORO PROSSIMO
+-completare le interfacce
+-CLASSE SEMAFORO FISICO!!!
+-testing terminale d'uscita con carico di rete simulato (terminale d'entrata attivo, no parcheggioSimulato)
+-COMPLETARE DOCUMENTAZIONE
+-assemblamento finale dei terminali(con GUI) con server centrale: Deployment del software
+		-sarà necessario eliminare le "impalcature" da testing (parcheggioSimulato, semafori...)

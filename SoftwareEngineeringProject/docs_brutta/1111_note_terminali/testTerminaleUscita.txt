@@ -1,0 +1,17 @@
+
+
+
+SIMULAZIONE PER IL TERMINALE USCENTE
+
+
+1. riempiamo il db con testDB
+
+2. prendiamo manualmente i dati di un biglietto e inseriamo da tastiera (non abbiamo un lettore carte...)
+
+3. Il programma così fatto dovrebbe: 
+		1-fare il check sul ticket e darci feedback, 
+		2-permetterci di inserire dati di pagamento, 
+		3-processare il pagamento e fornirci in output l'esito
+
+
+N.B.: SAREBBE MEGLIO IN UN SECONDO MOMENTO LAVORARE SULLA CORRETTA GESTIONE DEI LOCK NELL'APPLICAZIONE

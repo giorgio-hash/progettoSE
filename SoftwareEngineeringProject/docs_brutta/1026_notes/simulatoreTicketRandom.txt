@@ -1,0 +1,5 @@
+
+
+come fare la simulazione? BUFFER TEMPORANEO PER I TICKET
+
+	flow diagram: gestoreTicket

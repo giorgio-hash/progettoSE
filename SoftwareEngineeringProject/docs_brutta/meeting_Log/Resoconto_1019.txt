@@ -1,0 +1,27 @@
+
+2 ore ( 10.00 - 12.00 )
+
+
+LAVORO CONSEGUITO:
+
+-sviluppo fase di Design : Application Engineering
+		-definizione del pattern di riferimento( BoundedBuffer a 2 thread e mutex )
+		-primo abbozzo classi, interfacce, thread, oggetti d'interazione( sbarra, ticket, pagamento )
+		-primo abbozzo dei testing per l'applicazione
+		-primo abbozzo linee guida
+		-definizione obiettivi primari e secondari nello sviluppo
+		-ipotesi di modifiche future( prevenzione "ticket fantasma" e altro... )
+
+-Aspetti manageriali:
+		-GitHub su Eclipse per la gestione del lavoro
+		-cartella condivisa su Drive per la gestione dei documenti "grezzi"
+
+
+
+ARGOMENTI( ipotetici ) DEL PROSSIMO MEETING
+Quale database di riferimento utilizzare? ( il più semplice possibile )
+Gestione transazioni: necessario o( per adesso ) acccessorio?
+La feature "barrierless"?
+
+
+		
