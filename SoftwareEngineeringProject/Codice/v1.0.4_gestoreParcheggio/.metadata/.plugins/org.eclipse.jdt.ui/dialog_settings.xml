@@ -54,6 +54,9 @@
 		<item key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION" value="C:\Users\gchir\Desktop\progetto SE\parcheggioDeployment3\terminaleEntrata.jar"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
 			<item value="C:\Users\gchir\Desktop\progetto SE\parcheggioDeployment3\terminaleEntrata.jar"/>
+			<item value="C:\Users\gchir\Desktop\GitHub_proj\progettoSE\SoftwareEngineeringProject\Codice\v1.0.4_gestoreParcheggio\terminaleUscita.jar"/>
+			<item value="C:\Users\gchir\Desktop\GitHub_proj\progettoSE\SoftwareEngineeringProject\Codice\v1.0.4_gestoreParcheggio\GestoreParcheggio.jar"/>
+			<item value="C:\Users\gchir\Desktop\GitHub_proj\progettoSE\SoftwareEngineeringProject\Codice\v1.0.4_gestoreParcheggio\terminaleEntrata.jar"/>
 			<item value="C:\Users\gchir\Desktop\progetto SE\parcheggioDeployment3\GestoreParcheggio.jar"/>
 			<item value="C:\Users\gchir\Desktop\progetto SE\parcheggioDeployment3\terminaleUscita.jar"/>
 			<item value="C:\Users\gchir\Desktop\progetto SE\parcheggioDeployment2\DBreset.jar"/>

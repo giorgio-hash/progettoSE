@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="gestori.GestoreParcheggio"/>
 <fullyQualifiedTypeName name="utilities.BackupDB"/>
 <fullyQualifiedTypeName name="utilities.Parcheggio"/>
 <fullyQualifiedTypeName name="concorrenziali.AutoEntrante"/>
@@ -16,4 +15,5 @@
 <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
 <fullyQualifiedTypeName name="utilities.Ticket"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="gestori.GestoreParcheggio"/>
 </qualifiedTypeNameHistroy>
