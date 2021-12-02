@@ -1,7 +1,14 @@
 
+PER IL DATABASE mySQL
+
 settare porta TCP: 3300
 
 settare password:admin
 settare ID utente: root
 
 Nel setup ti verrà richiesto prima di settare la password e poi il nome utente.
+
+
+
+
+

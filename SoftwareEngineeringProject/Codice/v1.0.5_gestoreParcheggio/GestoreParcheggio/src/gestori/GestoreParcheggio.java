@@ -20,7 +20,7 @@ public class GestoreParcheggio
    private GestoreSbarra sbarraUscente;
    
    private Semaphore semaforo; // Mutua esclusione per sezione critica entrata e uscita di più macchine contemporaneamente.
-   private Semaphore entrante; // Conta parcheggi pieni.
+   
    private Semaphore uscente; // Conta parcheggi vuoti.
    private Semaphore permesso;
    
@@ -39,7 +39,6 @@ public class GestoreParcheggio
      
 	   init();
 	   uscente = new Semaphore(PARKING_SIZE); // Essendo il parcheggio inizialmente vuoto avrò PARKING_SIZE locazione vuote cioè pari alla capacità massima.
-	   entrante = new Semaphore(0); //PER LA SIMULAZIONE
 	   
    }
    
@@ -53,8 +52,7 @@ public class GestoreParcheggio
 	   parcheggio = this.db.getBackup();//recupera dati dal database
 	   
 	   uscente = new Semaphore(PARKING_SIZE - parcheggio.size()); // indica il numero di locazioni vuote rimanenti
-	   entrante = new Semaphore(parcheggio.size() > 0 ? 1 : 0); //PER LA SIMULAZIONE: se il parcheggio è ancora pieno, le auto possono uscire
-		
+	  
 	   
 		System.out.println("\n\nStato del backup...."); //stampa stato del backup
 		for(int i=0; i < parcheggio.size(); i++)
@@ -122,9 +120,6 @@ public class GestoreParcheggio
 	sbarraEntrante.down(); // Abbassamento sbarra.
 	semaforo.release(); // Rilascio semaforo per fine sezione critica.
 	
-	entrante.release(); // Sveglia del thread AutoUscente e lo avvisa che è presente
-						// un parcheggio pieno che può essere lasciato in qualsiasi momento.
-	
    }
 
    
@@ -133,10 +128,9 @@ public class GestoreParcheggio
 	   
 	   Ticket T = find(ticket);
 	   //verifica del pagamento
-	    if( ! payChecker.pagamento(prezzoticket, metodo, somma) ) {
-	    	//uscente.release(); // Sveglia L'AutoEntrante e lo avvisa che è presente
+	    if( ! payChecker.pagamento(prezzoticket, metodo, somma) ) 
 	    	return -1; //problema nel pagamento
-	    }
+	    
 	    
 	    return remove( T );
 	   
@@ -148,7 +142,6 @@ public class GestoreParcheggio
 	
    
 	try {
-		entrante.acquire();
 		semaforo.acquire();
 	} catch (InterruptedException e) {
 		// TODO Auto-generated catch block
@@ -176,8 +169,6 @@ public class GestoreParcheggio
     if( uscente.availablePermits() == 1 )
 		daiPermesso();
     
-    entrante.release(); //dà la possibilità ad un'altra autoUscente di pagare il biglietto
-    					// (dando anche il tempo a chi è in fila in entrata di prendere controllo del lock nel caso)
     return 1;
    }
    
@@ -191,7 +182,6 @@ public class GestoreParcheggio
 	   System.out.print("\nTicket consegnato:" + ticket + "\n");
 	   
 	   try {
-		   	entrante.acquire(); // l'AutoUscente deve acquisire un parcheggio
 								// pieno per svuotarlo. Di conseguenza andiamo a fare un acquire
 								// riguardante entrante.
 	  		semaforo.acquire(); // Acquisisco semaforo per mutua esclusione.
@@ -200,12 +190,10 @@ public class GestoreParcheggio
 	  		
 	  		 if( ticketsrc != null ){
 	  			 prezzoticket = payChecker.prezzoTicket(ticketsrc.getReceiveTime().toString());
-	  			entrante.release();
 	  			semaforo.release(); // Rilascio semaforo per fine sezione critica.
 	  		    return true;
 	  		 }else {
 	  		   System.out.println("\nbiglietto non riconosciuto.\n\n");
-	  		   entrante.release();
 	  		   semaforo.release();
 	  		   return false;
 	  	   }
