@@ -10,7 +10,8 @@
 	      Terminali con interfaccia grafica GUI user friendly così da facilitare il cliente nelle
 	      operazioni di ritiro, consegna e pagamento del ticket. 
 
-▪Could have: 
+▪Could have: processo per il reset del db 
+		(utile per casi di "fault-tolerance": se il parcheggio rimane in blackout per tanto, è giusto far pagare comunque il biglietto?)
 
 ▪Won’t have: parcheggio barrier-less con sistema di controllo delle targhe per verifica di
 	     avvenuto pagamento del ticket ed eventuale segnalazione alle autorità nel caso
