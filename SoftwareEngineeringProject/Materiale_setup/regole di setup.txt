@@ -1,12 +1,162 @@
+E' RICHIESTO UN DATABASE mySQL
+per installare localmente, utilizzare installer in cartella(se si possiede windows). Guida passo-a-passo disponibile qua in fondo.
 
-PER IL DATABASE mySQL
 
-settare porta TCP: 3300
+Per semplificare il setup, si è optato per l'utilizzo di file txt dove:
+-dbCoords.txt permette l'impostazione per la connessione al database mySQL (locale, forse anche non...la seconda opzione non è stata testata)
+-destIPsrc.txt permette l'impostazione dei socket lato-server, per la connessione dei terminali entrante e uscente al server
+-destIPen.txt permette l'impostazione lato-client per la connessione del terminale entrata al server (si suppone un contesto distribuito dove i terminali sono staccati dal server-gestore centrale)
+-destIPusc.txt permette l'impostazione lato-client per la connessione del terminale uscita al server (si suppone un contesto distribuito dove i terminali sono staccati dal server-gestore centrale)
 
-settare password:admin
-settare ID utente: root
 
-Nel setup ti verrà richiesto prima di settare la password e poi il nome utente.
+Prima di qualunque esecuzione è necessario tener conto di tutti i paragrafi qui sotto, per una corretta e coscenziosa esecuzione.
+
+IMPORTANTE: per verificare (su WINDOWS) se la porta impostata sia libera o meno, digitare su riga di comando: 	
+
+netstat -ano | find ":numero_porta"
+
+per verificare tutte le porte in uso, digitare su riga di comando: netstat 
+
+
+
+----------------------------------------------------------------------------------------------------------
+FILE "dbCoords.txt"
+è presente nella cartella di vx_gestoreParcheggio ( x è una qualsiasi versione, a partire dalla 1.0.6 ).
+Permette la connessione a un DBMS mySQL.
+
+N.B.: creazione del database "databasename", utile al programma, ed eliminazione di questo è interamente a carico del programma.
+	Non è pertanto necessario il setup manuale del database col DBMS, solo la connessione a questo tramite protocollo IP socket TCP.
+
+nel file dbCoords.txt le righe sono così organizzate, dalla cima al fondo:
+
+SCOPO COMANDO		COMANDO SUL FILE				ESEMPIO:
+1. Coordinate  	|	[IPaddress/localhost]:[socketDB]		|	localhost:3300
+2. User		|	user:[nomeutente]				|	user: root
+3. password	|	password:[passwordutente]			|	password: admin
+
+
+User e password hanno posizione variabile; Coordinate DEVE essere la prima riga.
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+FILE "destIPsrc.txt"
+è presente nella cartella di vx_gestoreParcheggio ( x è una qualsiasi versione, a partire dalla 1.0.7 ).
+Permette l'impostazione dei socket TCP lato server per la comunicazione tra terminali e server.
+
+l'impostazione delle voci di comando nel file è così fatta:
+
+socket entrante:[socket per collegamento con terminale entrante]
+socket uscente:[socket per collegamento con terminale uscente]
+
+Non è importante l'ordinamento di queste voci.
+
+IMPORTANTE: per verificare (su WINDOWS) se la porta impostata sia libera o meno, digitare su riga di comando: 	
+
+netstat -ano | find ":numero_porta"
+
+per verificare tutte le porte in uso, digitare su riga di comando: netstat 
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------
+
+FILE "destIPen.txt"
+E' presente nella cartella di vx_gestoreParcheggio ( x è una qualsiasi versione, a partire dalla 1.0.7 ).
+Permette la connessione del terminale d'entrata al server GestoreParcheggio.
+
+dentro al file, dev'esserci SOLTANTO E ALLA PRIMA RIGA la combinazione [IP_address]:[socket] 
+Dove:
+
+-IP_address è l'indirizzo IP del server
+-socket è il TCP specifico per la porta entrante (default: 1051)
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------
+
+FILE "destIPusc.txt"
+E' presente nella cartella di vx_gestoreParcheggio ( x è una qualsiasi versione, a partire dalla 1.0.7 ).
+Permette la connessione del terminale d'entrata al server GestoreParcheggio.
+
+dentro al file, dev'esserci SOLTANTO E ALLA PRIMA RIGA la combinazione [IP_address]:[socket] 
+Dove:
+
+-IP_address è l'indirizzo IP del server
+-socket è il TCP specifico per la porta entrante (default: 1050)
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------
+
+
+INSTALLAZIONE MYSQL
+istruzioni passo-a-passo:
+
+1. sezione "Choosing a Setup Type" : seleziona "Developer Default", clicca "Next"
+
+2. sezione "Check Requirements" : non selezionare nulla, clicca "Next" , clicca "Yes"
+
+3. sezione "Installation" : clicca "Esegui", attendi, quando la colonnina status ha solo "Complete" clicca "Next"
+
+4. sezione "Product Configuration" : clicca "Next"
+
+5. sezione "Type and Networking" : NON MODIFICARE NULLA! Clicca "Next"
+
+6. sezione "Accounts and Roles" : alla voce "MySQL Root Password" digita la PASSWORD PER IL DB (si consiglia di scriversela da qualche parte!). Clicca "Next"
+				  N.B.: l'UTENTE di questa password si chiamerà "root"
+
+7. sezione "Windows Service" : clicca "Next"
+
+8. sezione "Apply Configuration" : clicca "execute", attendi che tutti i bollini siano verdi, clicca "Finish" 
+
+9. sezione "Connect To Server" : alla voce "User name" lasciare "root". Alla voce Password, digita la password impostata prima.
+				 Clicca "Check". Se disponibile, clicca "Next".
+				 Se invece la connessione fallisce, controlla la password.
+			 	 Se non ricordi la password clicca "Cancel" (tornerai indietro nell'installazione).
+				
+10. sezione "Apply Configuration" : clicca "execute". Clicca "Next".
+
+11. sezione "Installation Complete" : togli il check su ogni box avente a fianco "Start MySQL..." e clicca "Finish"
+
+
+12. Ora, esci dalla cartella Materiale_setup ed entra in "Codice", poi in "vx_gestoreParcheggio" (x è una qualsiasi versione a partire dalla 1.0.6).
+
+13. Apri dbCoords.txt
+
+14. cancella le cose già scritte e inserisci in quest'ordine(dalla cima del file):
+		localhost:3306
+		user: root
+		password: [la tua password]
+
+15. chiudi il file
+
+
+
+
+
 
 
 

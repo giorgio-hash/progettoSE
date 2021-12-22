@@ -1,0 +1,2 @@
+socket entrante: 1051
+socket uscente: 1050
