@@ -1,0 +1,17 @@
+▪Must have: implementazione del parcheggio con sbarra dotato di gestione del flusso entrante e/o uscente
+	    dei veicoli attraverso dei terminali con ulteriore segnalazione, tramite un semaforo, dello
+	    stato del parcheggio ai clienti (pieno/vuoto).
+	    Database in cui vengono registrati tutti i dati relativi ai vari ticket erogati come codice
+	    del ticket, orario di erogazione ecc.
+
+▪Should have: implementazione di un sistema di pagamento e di gestione dei ticket attraverso il quale
+	      ogni cliente possa, dopo averlo ritirato e quindi essere entrato nel parcheggio, 
+	      pagare il ticket stesso ed uscire.
+	      Terminali con interfaccia grafica GUI user friendly così da facilitare il cliente nelle
+	      operazioni di ritiro, consegna e pagamento del ticket. 
+
+▪Could have: 
+
+▪Won’t have: parcheggio barrier-less con sistema di controllo delle targhe per verifica di
+	     avvenuto pagamento del ticket ed eventuale segnalazione alle autorità nel caso
+	     di uscita dal parcheggio avvenuta senza pagamento.
