@@ -1,0 +1,13 @@
+Prima di far partire il programma, assicurare di aver guardato la guida disponibile in "Materiale_Setup" : 
+il progetto adotta la tecnologia IPC e un database MySQL. Diverse impostazioni vanno controllate prima di avviare il programma.
+
+
+per far partire il programma, entrare nella cartella vx_gestoreParcheggio (x indica una versione qualsiasi, possibilmente l'ultima) e cliccare la batch "Launcher".
+
+
+N.B.: i prototipi e le versioni precedenti a 1.0.6 con database potrebbero non funzionare: 
+		-indirizzo di testing:  localhost:3300
+		-utente: root
+		-password: admin
+
+	Sono modificabili internamente, nelle classi: SocketEntrante(TerminaleEntrante), SocketUscente(TerminaleUScente), AutoEntrante(gestoreParcheggio), AutoUscente(gestoreParcheggio), Launcher(gestoreParcheggio), DBreset(DBreset)
