@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local-project language="java" version="6.1.20378" xml-version="3" flavor="j2se">
+  <property name="show-as-module" value="false" />
+  <property name="force-classpath" value="false" />
+  <property name="enabled-optional-measures" value="" />
+  <property name="root-file" value="GitHub_proj\progettoSE\SoftwareEngineeringProject\Codice\v1.0.7_gestoreParcheggio" />
+  <property name="project-type" value="eclipse_workspace" />
+  <property name="hide-externals" value="false" />
+  <property name="parse-archive-in-archive" value="false" />
+  <property name="include-injected-dependency" value="false" />
+  <property name="relative-to" value="const(THIS_FILE)" />
+  <property name="action-set-mod" value="1" />
+  <property name="detail-mode" value="true" />
+  <property name="hide-deprecated" value="false" />
+  <property name="resolve-name-clashes" value="true" />
+  <property name="project-excluded" />
+  <property name="show-needs-to-compile" value="false" />
+  <classpath>
+    <classpathentry kind="lib" path="GitHub_proj/progettoSE/SoftwareEngineeringProject/Codice/v1.0.7_gestoreParcheggio/DBreset/bin" module="DBreset" displaymodule="DBreset" />
+    <classpathentry kind="lib" path="GitHub_proj/progettoSE/SoftwareEngineeringProject/Codice/v1.0.7_gestoreParcheggio/GestoreParcheggio/bin" module="GestoreParcheggio" displaymodule="GestoreParcheggio" />
+    <classpathentry kind="lib" path="GitHub_proj/progettoSE/SoftwareEngineeringProject/Codice/v1.0.7_gestoreParcheggio/TerminaleEntrata/bin" module="TerminaleEntrata" displaymodule="TerminaleEntrata" />
+    <classpathentry kind="lib" path="GitHub_proj/progettoSE/SoftwareEngineeringProject/Codice/v1.0.7_gestoreParcheggio/TerminaleUscita/bin" module="TerminaleUscita" displaymodule="TerminaleUscita" />
+  </classpath>
+  <pom-root-files />
+  <modules-in-scope />
+  <excludes>
+    <exclude expression="*.*&amp;amp;*" active="true" />
+  </excludes>
+  <restructuring>
+    <set version="3" name="Action list 1" hiview="Codemap" active="true" todo="false" list="0" />
+  </restructuring>
+  <sourcepaths>
+    <pathentry type="file" path="GitHub_proj\progettoSE\SoftwareEngineeringProject\Codice\v1.0.7_gestoreParcheggio\DBreset\src" />
+    <pathentry type="file" path="GitHub_proj\progettoSE\SoftwareEngineeringProject\Codice\v1.0.7_gestoreParcheggio\GestoreParcheggio\src" />
+    <pathentry type="file" path="GitHub_proj\progettoSE\SoftwareEngineeringProject\Codice\v1.0.7_gestoreParcheggio\TerminaleEntrata\src" />
+    <pathentry type="file" path="GitHub_proj\progettoSE\SoftwareEngineeringProject\Codice\v1.0.7_gestoreParcheggio\TerminaleUscita\src" />
+  </sourcepaths>
+  <grid-set sep="." version="6.1.20378">
+    <grid name="Diagram 1" enforce="true" locked="false" strict="false">
+      <row>
+        <cell name="launcher" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="TerminaleEntrata" pattern="TerminaleEntrata.launcher.TerminaleEntrata" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="view" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="ButtonPanel1" pattern="TerminaleEntrata.view.ButtonPanel1" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="TimeChanger1" pattern="TerminaleEntrata.view.TimeChanger1" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="ViewEntrante" pattern="TerminaleEntrata.view.ViewEntrante" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="CardLayoutEntrata" pattern="TerminaleEntrata.view.CardLayoutEntrata" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="Panel1" pattern="TerminaleEntrata.view.Panel1" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="controller" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="ControllerEntrante" pattern="TerminaleEntrata.controller.ControllerEntrante" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="model" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="SocketEntrante" pattern="TerminaleEntrata.model.SocketEntrante" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <description>Subsystem breakout for 'TerminaleEntrata' (depth=7)</description>
+    </grid>
+    <grid name="Diagram 2" enforce="true" locked="false" strict="false">
+      <row>
+        <cell name="launcher" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="Launcher" pattern="GestoreParcheggio.launcher.Launcher" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="concorrenziali" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="AutoEntrante" pattern="GestoreParcheggio.concorrenziali.AutoEntrante" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="AutoUscente" pattern="GestoreParcheggio.concorrenziali.AutoUscente" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="gestori" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="GestoreParcheggio" pattern="GestoreParcheggio.gestori.GestoreParcheggio" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="GestorePagamento" pattern="GestoreParcheggio.gestori.GestorePagamento" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="GestoreSbarra" pattern="GestoreParcheggio.gestori.GestoreSbarra" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="utilities" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="BackupDB" pattern="GestoreParcheggio.utilities.BackupDB" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="Ticket" pattern="GestoreParcheggio.utilities.Ticket" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <description>Subsystem breakout for 'GestoreParcheggio' (depth=7)</description>
+    </grid>
+    <grid name="Diagram 3" enforce="true" locked="false" strict="false">
+      <row>
+        <cell name="launcher" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="TerminaleUscente" pattern="TerminaleUscita.launcher.TerminaleUscente" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="view" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="ViewUscente" pattern="TerminaleUscita.view.ViewUscente" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="ButtonPanel" pattern="TerminaleUscita.view.ButtonPanel" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="ChoiceButtonPanel" pattern="TerminaleUscita.view.ChoiceButtonPanel" vexpanded="false" illegal="false" visibility="public" drill="true" />
+              <cell name="TimeChanger" pattern="TerminaleUscita.view.TimeChanger" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="CardLayoutUscita" pattern="TerminaleUscita.view.CardLayoutUscita" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+            <row>
+              <cell name="Panel" pattern="TerminaleUscita.view.Panel" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="controller" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="ControllerUscente" pattern="TerminaleUscita.controller.ControllerUscente" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <row>
+        <cell name="model" pattern="" vexpanded="true" illegal="false" visibility="public" drill="true">
+          <grid>
+            <row>
+              <cell name="SocketUscente" pattern="TerminaleUscita.model.SocketUscente" vexpanded="false" illegal="false" visibility="public" drill="true" />
+            </row>
+          </grid>
+        </cell>
+      </row>
+      <description>Subsystem breakout for 'TerminaleUscita' (depth=7)</description>
+    </grid>
+  </grid-set>
+</local-project>
