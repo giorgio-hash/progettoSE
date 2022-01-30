@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="GestoreParcheggio"/>
+	<feature automatic="selected" name="Ticket"/>
+	<feature automatic="selected" name="pagamento"/>
+	<feature automatic="unselected" name="Erogazione"/>
+	<feature manual="selected" name="Consegna"/>
+	<feature automatic="selected" name="MetodoPagamento"/>
+	<feature manual="selected" name="CC"/>
+	<feature manual="selected" name="contanti"/>
+	<feature name="moneta"/>
+	<feature name="abbonamento"/>
+	<feature automatic="selected" name="Guardia"/>
+	<feature automatic="selected" name="Barrier"/>
+	<feature automatic="unselected" name="Barrierless"/>
+	<feature automatic="selected" name="BaseDati"/>
+	<feature automatic="selected" name="TicketTable"/>
+	<feature name="TargheTable"/>
+	<feature automatic="selected" name="TerminaliHW"/>
+	<feature automatic="unselected" name="unico"/>
+	<feature automatic="selected" name="separati"/>
+</configuration>
